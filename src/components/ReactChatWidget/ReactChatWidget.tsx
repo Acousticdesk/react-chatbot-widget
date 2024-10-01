@@ -2,6 +2,7 @@ import { IoIosClose, IoIosMenu, IoMdSend } from "react-icons/io";
 import { FaRobot } from "react-icons/fa";
 
 // todo akicha: prettify all the components
+// todo akicha: add acousticdesk and react to the chat file names
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 
 // todo akicha: the styles should be configured to use prefix
@@ -21,7 +22,7 @@ export function ReactChatWidget() {
         <div>
           <FaRobot className="text-gray-400 text-5xl mx-auto" />
           {/* todo akicha: we should allow to customize the color of the text */}
-          <p className="font-semibold text-gray-800 mt-1">
+          <p className="font-semibold text-primary mt-1">
             acousticdesk/chatbot-widget
           </p>
         </div>
