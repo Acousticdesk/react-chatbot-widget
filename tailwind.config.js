@@ -9,6 +9,7 @@ export default {
       // todo akicha: text-primary, secondary, muted, link, error
       // todo akicha: add button variants, inputs, shadows
       // todo akicha: the hover, focus, etc states can be shared between multiple components like inputs and buttons
+      // todo akicha: ask chatGPT to give the color scheme for both the light and dark themes
       colors: {
         primary: `var(--chatbot-widget-primary-color, ${colors.gray[800]})`,
         secondary: `var(--chatbot-widget-secondary-color, ${colors.gray[600]})`,
