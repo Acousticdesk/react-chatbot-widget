@@ -4,6 +4,10 @@ import { FaRobot } from "react-icons/fa";
 // todo akicha: prettify all the components
 // todo akicha: add acousticdesk and react to the chat file names
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
+import { ReactChatWidgetDrawer } from "./ReachChatWidgetDrawer";
+import { useState } from "react";
+
+// todo akicha: add the prefix to the tailwing classes!
 
 // todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
@@ -13,14 +17,27 @@ import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 // todo akicha: customizable rich text support
 // todo akicha: error message
 // todo akicha: loading states and allow to turn them on whenever needed
+// todo akicha: chatHistory should support infinite loading
+// todo akicha: bundle size should be reasonable
 export function ReactChatWidget() {
+  const [hasDrawer, setHasDrawer] = useState(false);
+
+  function toggleDrawer() {
+    setHasDrawer((isOpen) => !isOpen);
+  }
+
   return (
+    // todo akicha: absolute -> relative after the move-able popover is added
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col w-[480px] h-[640px]">
       <header className="rounded-t-lg px-4 py-2 flex justify-between border-b bg-background border-border">
         {/* todo akicha: this icon is very wide */}
-        {/* todo akicha: add animation to the drawer when the menu button is clicked */}
-        <IoIosMenu className="text-border cursor-pointer text-3xl" />
-        {/* todo akicha: icon size and icon color should be configured somehow */}
+        {/* todo akicha: make it a clickable button */}
+        {/* todo akicha: we need an icon component to remember the color and the size */}
+        <IoIosMenu
+          // todo akicha: move this function definition to the top
+          onClick={toggleDrawer}
+          className="text-border cursor-pointer text-3xl"
+        />
         <IoIosClose className="text-border cursor-pointer text-3xl" />
       </header>
       <div className="flex-1 bg-background flex flex-col items-center justify-center">
@@ -39,6 +56,12 @@ export function ReactChatWidget() {
         <TextAreaAutoResize className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text text-base max-h-48" />
         <IoMdSend className="text-border cursor-pointer ml-2 mt-1 text-3xl" />
       </footer>
+      {hasDrawer ? (
+        <ReactChatWidgetDrawer
+          className="absolute left-0 top-0"
+          toggleDrawer={toggleDrawer}
+        />
+      ) : null}
     </div>
   );
 }
