@@ -3,7 +3,6 @@ export default {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      // todo akicha: we can switch the theme by adding a "dark" class to the body
       colors: {
         primary: `var(--chatbot-widget-primary-color, #0078d7)`,
         secondary: `var(--chatbot-widget-secondary-color, #38b2ac)`,

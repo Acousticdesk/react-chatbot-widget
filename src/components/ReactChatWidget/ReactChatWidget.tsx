@@ -8,6 +8,7 @@ import { ReactChatWidgetDrawer } from "./ReachChatWidgetDrawer";
 import { useState } from "react";
 
 // todo akicha: add the prefix to the tailwing classes!
+// todo akicha: should be cross-browser compatible
 
 // todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
@@ -54,7 +55,11 @@ export function ReactChatWidget() {
         {/* todo akicha: why the default font size is so huge? */}
         {/* todo akicha: add a proper active state for the textarea */}
         {/* todo akicha: the placeholders should be configurable */}
-        <TextAreaAutoResize className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text-primary text-base max-h-48" textAreaProps={{ placeholder: "Ask me anything..." }} />
+        {/* todo akicha: set the max-height */}
+        <TextAreaAutoResize
+          className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text-primary text-base max-h-48 focus:outline-none focus:border-focus"
+          textAreaProps={{ placeholder: "Ask me anything..." }}
+        />
         {/* todo akicha: this should be disabled by default */}
         <IoMdSend className="text-primary cursor-pointer ml-2 mt-1 text-3xl" />
       </footer>
