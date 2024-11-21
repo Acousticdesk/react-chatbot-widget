@@ -55,6 +55,7 @@ export function ReactChatWidgetDrawer({
           </p>
         </button>
 
+        {/* todo akicha: this whole section should be configurable and support infinite scrolling and grouping by date */}
         <section className="pl-2">
           <p className="text-text-primary font-semibold px-2">Previous Chats</p>
 
