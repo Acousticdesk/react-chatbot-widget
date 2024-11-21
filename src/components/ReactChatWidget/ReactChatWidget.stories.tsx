@@ -15,7 +15,6 @@ export const Default = {
   args: {},
 };
 
-// todo akicha: when changing the theme to dark and than back to light, it's still dark
 export const DarkTheme: Story = {
   args: {},
   decorators: [

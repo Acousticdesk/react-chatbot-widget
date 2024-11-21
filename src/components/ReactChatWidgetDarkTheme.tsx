@@ -42,6 +42,25 @@ export function ReactChatWidgetDarkTheme({
       "#263238"
     );
     document.body.style.setProperty("--chatbot-widget-focus-color", "#4db6ac");
+
+    return () => {
+      document.body.style.removeProperty("--chatbot-widget-primary-color");
+      document.body.style.removeProperty("--chatbot-widget-secondary-color");
+      document.body.style.removeProperty("--chatbot-widget-background-color");
+      document.body.style.removeProperty("--chatbot-widget-border-color");
+      document.body.style.removeProperty("--chatbot-widget-text-color");
+      document.body.style.removeProperty(
+        "--chatbot-widget-text-secondary-color"
+      );
+      document.body.style.removeProperty(
+        "--chatbot-widget-message-bubble-color"
+      );
+      document.body.style.removeProperty("--chatbot-widget-message-text-color");
+      document.body.style.removeProperty(
+        "--chatbot-widget-bot-message-bubble-color"
+      );
+      document.body.style.removeProperty("--chatbot-widget-focus-color");
+    };
   }, []);
 
   return children;
