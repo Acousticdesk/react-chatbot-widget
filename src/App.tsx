@@ -1,6 +1,5 @@
 import { ReactChatWidget } from "./components/ReactChatWidget/ReactChatWidget";
 
-// todo akicha: add storybook
 function App() {
   return (
     <div>
