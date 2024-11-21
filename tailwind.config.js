@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        // todo akicha: add hover and active colors
         primary: `var(--chatbot-widget-primary-color, #0078d7)`,
         secondary: `var(--chatbot-widget-secondary-color, #38b2ac)`,
         background: `var(--chatbot-widget-background-color, #ffffff)`,

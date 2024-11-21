@@ -45,24 +45,28 @@ export function ReactChatWidgetDrawer({
           />
         </header>
 
-          {/* todo akicha: define clickable area */}
-          <div className="my-8 flex items-center">
-            <FaRobot className="text-text-secondary text-2xl" />
-            <p className="font-semibold text-text-primary ml-2">
-              acousticdesk/chatbot-widget
-            </p>
-          </div>
-
-          <p className="text-text-primary font-semibold">
-            Previous Chats
+        <button
+          onClick={toggleDrawer}
+          className="my-8 flex w-full items-center hover:bg-focus px-4 py-2 rounded"
+        >
+          <FaRobot className="text-text-secondary text-2xl" />
+          <p className="font-semibold text-text-primary ml-2">
+            acousticdesk/chatbot-widget
           </p>
+        </button>
+
+        <section className="pl-2">
+          <p className="text-text-primary font-semibold px-2">Previous Chats</p>
 
           {/* todo akicha: test the layout to see how it renders many items */}
           <ul className="mt-4">
             <li>
-              <p className="text-text-primary">My first chat</p>
+              <button className="text-text-primary w-full px-2 py-1 hover:bg-focus text-left rounded">
+                My first chat
+              </button>
             </li>
           </ul>
+        </section>
       </motion.div>
     </div>
   );
