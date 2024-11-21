@@ -4,6 +4,7 @@ interface DarkThemeProps {
   children: ReactNode;
 }
 
+// todo akicha: ask ChatGPT to refine the dark theme based on the existing light theme
 export function DarkTheme({ children }: DarkThemeProps) {
   useEffect(() => {
     // todo akicha: instead of hardcoding the colors, see if we can get them from tailwind config

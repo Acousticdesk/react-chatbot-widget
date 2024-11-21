@@ -33,7 +33,7 @@ export function ReactChatWidgetDrawer({
           // todo akicha: move this function definition to the top
           onClick={toggleDrawer}
           // todo akicha: repetitive className with what we have in the container component
-          className="text-border cursor-pointer text-3xl"
+          className="text-text-secondary cursor-pointer text-3xl"
         />
       </motion.div>
     </div>

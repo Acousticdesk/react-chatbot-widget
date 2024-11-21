@@ -3,6 +3,7 @@ import type { ChangeEvent, TextareaHTMLAttributes } from "react";
 
 interface TextAreaAutoResizeProps {
   className?: string;
+  // todo akicha: vetter pass all the properties inline
   textAreaProps?: TextareaHTMLAttributes<HTMLTextAreaElement>;
 }
 

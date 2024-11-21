@@ -36,15 +36,15 @@ export function ReactChatWidget() {
         <IoIosMenu
           // todo akicha: move this function definition to the top
           onClick={toggleDrawer}
-          className="text-border cursor-pointer text-3xl"
+          className="text-text-secondary cursor-pointer text-3xl"
         />
-        <IoIosClose className="text-border cursor-pointer text-3xl" />
+        <IoIosClose className="text-text-secondary cursor-pointer text-3xl" />
       </header>
       <div className="flex-1 bg-background flex flex-col items-center justify-center">
         <div>
-          <FaRobot className="text-border text-5xl mx-auto" />
+          <FaRobot className="text-text-secondary text-5xl mx-auto" />
           {/* todo akicha: we should allow to customize the color of the text */}
-          <p className="font-semibold text-primary mt-1">
+          <p className="font-semibold text-text-primary mt-1">
             acousticdesk/chatbot-widget
           </p>
         </div>
@@ -53,8 +53,10 @@ export function ReactChatWidget() {
       <footer className="rounded-b-lg px-4 py-2 bg-background border-t border-border flex">
         {/* todo akicha: why the default font size is so huge? */}
         {/* todo akicha: add a proper active state for the textarea */}
-        <TextAreaAutoResize className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text text-base max-h-48" />
-        <IoMdSend className="text-border cursor-pointer ml-2 mt-1 text-3xl" />
+        {/* todo akicha: the placeholders should be configurable */}
+        <TextAreaAutoResize className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text-primary text-base max-h-48" textAreaProps={{ placeholder: "Ask me anything..." }} />
+        {/* todo akicha: this should be disabled by default */}
+        <IoMdSend className="text-primary cursor-pointer ml-2 mt-1 text-3xl" />
       </footer>
       {hasDrawer ? (
         <ReactChatWidgetDrawer
