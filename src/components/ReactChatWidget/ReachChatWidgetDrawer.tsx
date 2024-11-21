@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { IoIosMenu } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 
+import "../../index.css";
+
 interface ReactChatWidgetDrawerProps {
   toggleDrawer: () => void;
   className?: string;
@@ -15,7 +17,12 @@ export function ReactChatWidgetDrawer({
 }: ReactChatWidgetDrawerProps) {
   // todo akicha: it should have a darker background color, similar to what ChatGPT has
   return (
-    <div className={twMerge("overflow-hidden h-full w-3/4 rounded-tl-lg rounded-bl-lg", className)}>
+    <div
+      className={twMerge(
+        "overflow-hidden h-full w-3/4 rounded-tl-lg rounded-bl-lg",
+        className
+      )}
+    >
       <motion.div
         initial={{
           x: -100,
