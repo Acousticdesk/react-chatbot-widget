@@ -61,7 +61,7 @@ export function ReactChatWidget() {
         {/* todo akicha: the placeholders should be configurable */}
         {/* todo akicha: set the max-height */}
         <TextAreaAutoResize
-          className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text-primary text-base max-h-48 focus:outline-none focus:border-focus"
+          className="resize-none bg-background rounded-lg border border-border flex-1 h-10 px-2 py-1 text-text-primary text-base max-h-48 focus:outline-none focus:border-primary"
           textAreaProps={{ placeholder: "Ask me anything..." }}
         />
         {/* todo akicha: this should be disabled by default */}

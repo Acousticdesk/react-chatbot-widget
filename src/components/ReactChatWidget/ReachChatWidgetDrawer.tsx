@@ -47,7 +47,7 @@ export function ReactChatWidgetDrawer({
 
         <button
           onClick={toggleDrawer}
-          className="my-8 flex w-full items-center hover:bg-focus px-4 py-2 rounded"
+          className="my-8 flex w-full items-center hover:bg-primary-hover active:bg-primary-active px-4 py-2 rounded"
         >
           <FaRobot className="text-text-secondary text-2xl" />
           <p className="font-semibold text-text-primary ml-2">
@@ -62,7 +62,7 @@ export function ReactChatWidgetDrawer({
           {/* todo akicha: test the layout to see how it renders many items */}
           <ul className="mt-4">
             <li>
-              <button className="text-text-primary w-full px-2 py-1 hover:bg-focus text-left rounded">
+              <button className="text-text-primary w-full px-2 py-1 hover:bg-primary-hover active:bg-primary-active text-left rounded">
                 My first chat
               </button>
             </li>
