@@ -9,6 +9,9 @@ import { useState } from "react";
 
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
+// todo akicha: add peer dependecies
+// todo akicha: check the bundle size
+// todo akicha: see if we want to exclude tailwind from the bundle and re-use user's tailwind config
 
 // todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
