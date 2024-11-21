@@ -8,7 +8,7 @@ interface DarkThemeProps {
 export function DarkTheme({ children }: DarkThemeProps) {
   useEffect(() => {
     // todo akicha: instead of hardcoding the colors, see if we can get them from tailwind config
-    // todo akicha: add the colors config to the storybook
+    // todo akicha: add the color definitions to the storybook
     document.body.style.setProperty("--chatbot-widget-primary-color", "#fff");
     document.body.style.setProperty("--chatbot-widget-secondary-color", "#fff");
     document.body.style.setProperty(
