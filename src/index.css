@@ -2,7 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   height: 100vh;
   background: #222;
+}
+
+/* todo akicha: see what it will take to let the user configure this in their app */
+
+:root {
+  --chatbot-widget-primary-color: #0078d7;
+  --chatbot-widget-secondary-color: #38b2ac;
+  --chatbot-widget-primary-hover-color: #66b5f2;
+  --chatbot-widget-primary-active-color: #4da7e6;
+  --chatbot-widget-secondary-hover-color: #7fdcd1;
+  --chatbot-widget-secondary-active-color: #68d3c5;
+  --chatbot-widget-background-color: #ffffff;
+  --chatbot-widget-border-color: #e0e0e0;
+  --chatbot-widget-text-color: #333333;
+  --chatbot-widget-secondary-text-color: #666666;
+  --chatbot-widget-message-bubble-color: #e1f5fe;
+  --chatbot-widget-message-text-color: #01579b;
+  --chatbot-widget-bot-message-bubble-color: #f9f9f9;
+}
+
+:root.dark {
+  --chatbot-widget-primary-color: #80cbc4;
+  --chatbot-widget-secondary-color: #26a69a;
+  --chatbot-widget-primary-hover-color: #429f97;
+  --chatbot-widget-primary-active-color: #1e8e8e;
+  --chatbot-widget-secondary-hover-color: #2d968b;
+  --chatbot-widget-secondary-active-color: #007568;
+  --chatbot-widget-background-color: #121212;
+  --chatbot-widget-border-color: #424242;
+  --chatbot-widget-text-color: #ffffff;
+  --chatbot-widget-secondary-text-color: #bdbdbd;
+  --chatbot-widget-message-bubble-color: #37474f;
+  --chatbot-widget-message-text-color: #ffffff;
+  --chatbot-widget-bot-message-bubble-color: #263238;
 }
