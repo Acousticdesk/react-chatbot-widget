@@ -6,6 +6,11 @@ import { FaRobot } from "react-icons/fa";
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 import { ReactChatWidgetDrawer } from "./ReachChatWidgetDrawer";
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
+
+interface ReactChatWidgetProps {
+  className?: string;
+}
 
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
@@ -24,7 +29,7 @@ import { useState } from "react";
 // todo akicha: loading states and allow to turn them on whenever needed
 // todo akicha: chatHistory should support infinite loading
 // todo akicha: bundle size should be reasonable
-export function ReactChatWidget() {
+export function ReactChatWidget({ className }: ReactChatWidgetProps) {
   const [hasDrawer, setHasDrawer] = useState(false);
 
   function toggleDrawer() {
@@ -33,7 +38,12 @@ export function ReactChatWidget() {
 
   return (
     // todo akicha: absolute -> relative after the move-able popover is added
-    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col w-[480px] h-[640px]">
+    <div
+      className={twMerge(
+        "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col w-[480px] h-[640px]",
+        className
+      )}
+    >
       <header className="rounded-t-lg px-4 py-2 flex justify-between border-b bg-background border-border">
         {/* todo akicha: this icon is very wide */}
         {/* todo akicha: make it a clickable button */}
