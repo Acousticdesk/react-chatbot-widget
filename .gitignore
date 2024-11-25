@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 *storybook.log
-tsconfig.app.tsbuildinfo
-tsconfig.node.tsbuildinfo
+*.tsbuildinfo
