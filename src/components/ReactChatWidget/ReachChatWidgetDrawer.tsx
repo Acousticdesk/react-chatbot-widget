@@ -2,7 +2,6 @@ import { motion } from "motion/react";
 import { IoIosMenu } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 
-import "../../index.css";
 import { FaRobot } from "react-icons/fa";
 
 interface ReactChatWidgetDrawerProps {

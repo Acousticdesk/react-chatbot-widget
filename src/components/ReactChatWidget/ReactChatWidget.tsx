@@ -8,16 +8,21 @@ import { ReactChatWidgetDrawer } from "./ReachChatWidgetDrawer";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
+import "../../index.css";
+
 interface ReactChatWidgetProps {
   className?: string;
 }
 
+// todo akicha: rename to ReactChatbotWidget
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
 // todo akicha: add peer dependecies
 // todo akicha: check the bundle size
 // todo akicha: see if we want to exclude tailwind from the bundle and re-use user's tailwind config
 // todo akicha: configure typography
+// todo akicha: react and react-dom (maybe more libraries) should be marked as peer dependencies
+// todo akicha: export types from the npm package
 
 // todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
