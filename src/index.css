@@ -8,8 +8,6 @@ body {
   background: #222;
 }
 
-/* todo akicha: see what it will take to let the user configure this in their app */
-
 :root {
   --chatbot-widget-primary-color: #0078d7;
   --chatbot-widget-secondary-color: #38b2ac;

@@ -11,3 +11,10 @@ https://acousticdesk.github.io/react-chatbot-widget/?path=/docs/reactchatwidget-
 ```bash
 npm i @acousticdesk/react-chatbot-widget
 ```
+
+## Running Locally
+
+```bash
+npm ci
+npm run dev
+```
