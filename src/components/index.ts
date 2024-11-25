@@ -1,1 +1,1 @@
-export * from "./ReactChatWidget/ReactChatWidget";
+export * from "./ReactChatWidget/ReactChatbotWidget";

@@ -4,17 +4,16 @@ import { FaRobot } from "react-icons/fa";
 // todo akicha: prettify all the components
 // todo akicha: add acousticdesk and react to the chat file names
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
-import { ReactChatWidgetDrawer } from "./ReachChatWidgetDrawer";
+import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import "../../index.css";
 
-interface ReactChatWidgetProps {
+interface ReactChatbotWidgetProps {
   className?: string;
 }
 
-// todo akicha: rename to ReactChatbotWidget
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
 // todo akicha: add peer dependecies
@@ -23,6 +22,7 @@ interface ReactChatWidgetProps {
 // todo akicha: configure typography
 // todo akicha: react and react-dom (maybe more libraries) should be marked as peer dependencies
 // todo akicha: export types from the npm package
+// todo akicha: we need to re-deploy to gh-pages every time we release a new version
 
 // todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
@@ -34,7 +34,7 @@ interface ReactChatWidgetProps {
 // todo akicha: loading states and allow to turn them on whenever needed
 // todo akicha: chatHistory should support infinite loading
 // todo akicha: bundle size should be reasonable
-export function ReactChatWidget({ className }: ReactChatWidgetProps) {
+export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
   const [hasDrawer, setHasDrawer] = useState(false);
 
   function toggleDrawer() {
