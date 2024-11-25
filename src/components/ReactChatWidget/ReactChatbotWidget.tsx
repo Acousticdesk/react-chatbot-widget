@@ -16,9 +16,7 @@ interface ReactChatbotWidgetProps {
 
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
-// todo akicha: add peer dependecies
 // todo akicha: check the bundle size
-// todo akicha: see if we want to exclude tailwind from the bundle and re-use user's tailwind config
 // todo akicha: configure typography
 // todo akicha: react and react-dom (maybe more libraries) should be marked as peer dependencies
 // todo akicha: export types from the npm package
