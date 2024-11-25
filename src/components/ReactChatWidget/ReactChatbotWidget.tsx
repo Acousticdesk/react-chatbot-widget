@@ -14,6 +14,8 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
+// todo akicha: remove tailwind and user styled-components instead
+
 // todo akicha: add the prefix to the tailwing classes!
 // todo akicha: should be cross-browser compatible
 // todo akicha: check the bundle size
