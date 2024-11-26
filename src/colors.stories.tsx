@@ -54,6 +54,15 @@ const meta: Meta<typeof Colors> = {
   args: {
     colors: colors.light,
   },
+  decorators: [
+    (Story) => (
+      <div className="react-chatbot-widget">
+        <div className="font-sans">
+          <Story />
+        </div>
+      </div>
+    ),
+  ]
 };
 
 export default meta;
