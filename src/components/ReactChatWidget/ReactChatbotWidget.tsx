@@ -14,7 +14,7 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
-// todo akicha: add the prefix to the tailwing classes!
+// todo akicha: add the prefix to the tailwing classes (manually)!
 // todo akicha: should be cross-browser compatible
 // todo akicha: check the bundle size
 // todo akicha: configure typography
