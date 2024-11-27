@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
+import React from "react";
 
 const preview: Preview = {
   parameters: {
@@ -18,6 +19,17 @@ const preview: Preview = {
       ],
     },
   },
+  decorators: [
+    (Story) => {
+      return (
+        <div className="react-chatbot-widget">
+          <div className="font-sans">
+            <Story />
+          </div>
+        </div>
+      );
+    },
+  ],
 };
 
 export default preview;

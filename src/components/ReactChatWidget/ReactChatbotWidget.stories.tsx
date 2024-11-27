@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react";
+import { IoMoonOutline } from "react-icons/io5";
 import { ReactChatbotWidget } from "./ReactChatbotWidget";
 
-// todo akicha: add a toggle to toggle the dark class on the html element to preview the dark theme
 const meta: Meta<typeof ReactChatbotWidget> = {
   component: ReactChatbotWidget,
   title: "ReactChatbotWidget",
@@ -14,6 +14,29 @@ const meta: Meta<typeof ReactChatbotWidget> = {
       default: "dark",
     },
   },
+  decorators: [
+    (Story) => {
+      const handleDarkModeChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+      ) => {
+        const darkMode = event.target.checked;
+        document.documentElement.classList.toggle("dark", darkMode);
+      };
+
+      return (
+        <div>
+          <label className="text-white flex items-center mb-4">
+            <input type="checkbox" onChange={handleDarkModeChange} />
+            <span className="ml-2 text-white flex items-center">
+              <IoMoonOutline className="mr-2" />
+              Dark Theme
+            </span>
+          </label>
+          <Story />
+        </div>
+      );
+    },
+  ],
 };
 
 export default meta;

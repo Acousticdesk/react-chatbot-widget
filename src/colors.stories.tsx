@@ -36,7 +36,7 @@ function Colors({ colors }: ColorsProps) {
   return (
     <ul className="grid grid-cols-3 gap-4">
       {Object.entries(colors).map(([key, value]) => (
-        <li key={key} className="shadow rounded">
+        <li key={key} className="shadow rounded overflow-hidden bg-white">
           <div className="h-20" style={{ backgroundColor: value }} />
           <p className="px-4 py-2">{key}</p>
         </li>
@@ -54,15 +54,6 @@ const meta: Meta<typeof Colors> = {
   args: {
     colors: colors.light,
   },
-  decorators: [
-    (Story) => (
-      <div className="react-chatbot-widget">
-        <div className="font-sans">
-          <Story />
-        </div>
-      </div>
-    ),
-  ]
 };
 
 export default meta;
