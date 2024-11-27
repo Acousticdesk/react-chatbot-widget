@@ -1,8 +1,10 @@
 .react-chatbot-widget {
   @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
 }
+
+/* the prefix for components and utilities is handled by the "important" setting in the tailwind.config.js file */
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --chatbot-widget-primary-color: #0078d7;

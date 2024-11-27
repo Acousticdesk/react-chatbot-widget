@@ -16,8 +16,8 @@ export const colors = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  important: '.react-chatbot-widget',
-  content: ["./src/**/*.{ts,tsx}", "./.storybook/**/*.{ts,tsx}"],
+  important: ".react-chatbot-widget",
+  content: ["./src/**/*.{ts,tsx,html}", "./.storybook/**/*.{ts,tsx,html}"],
   theme: {
     extend: {
       colors: {
