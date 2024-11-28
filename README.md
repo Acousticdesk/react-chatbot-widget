@@ -1,6 +1,6 @@
 # @acousticdek/react-chatbot-widget
 
-A fully customizable React Chatbot Widget for your web application.
+A lightweight (_15KB gzipped_), fully customizable React chatbot widget designed to seamlessly enhance your web application.
 
 ![React Chatbot Widget Preview](./docs/assets/img/preview.png)
 
@@ -13,11 +13,6 @@ https://acousticdesk.github.io/react-chatbot-widget/?path=/docs/reactchatwidget-
 ```bash
 npm i @acousticdesk/react-chatbot-widget
 ```
-
-### Bundle Size
-
-_Gzip_: 15KB  
-_Brotli_: 13KB
 
 ## Running Locally
 
