@@ -1,7 +1,5 @@
-import { motion } from "motion/react";
 import { IoIosMenu } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
-
 import { FaRobot } from "react-icons/fa";
 
 interface ReactChatWidgetDrawerProps {
@@ -22,19 +20,7 @@ export function ReactChatWidgetDrawer({
         className
       )}
     >
-      <motion.div
-        initial={{
-          x: -100,
-          opacity: 0,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-        }}
-        transition={{ duration: 0.1, ease: "easeInOut" }}
-        // todo akicha: should we allow the width defined in %?
-        className="cw-h-full cw-bg-background cw-border-r-border cw-border-r cw-w-full cw-px-4 cw-py-2"
-      >
+      <div className="cw-animate-slide-in cw-h-full cw-bg-background cw-border-r-border cw-border-r cw-w-full cw-px-4 cw-py-2">
         <header>
           <IoIosMenu
             // todo akicha: move this function definition to the top
@@ -56,7 +42,9 @@ export function ReactChatWidgetDrawer({
 
         {/* todo akicha: this whole section should be configurable and support infinite scrolling and grouping by date */}
         <section className="cw-pl-2">
-          <p className="cw-text-text-primary cw-font-semibold cw-px-2">Previous Chats</p>
+          <p className="cw-text-text-primary cw-font-semibold cw-px-2">
+            Previous Chats
+          </p>
 
           {/* todo akicha: test the layout to see how it renders many items */}
           <ul className="cw-mt-4">
@@ -67,7 +55,7 @@ export function ReactChatWidgetDrawer({
             </li>
           </ul>
         </section>
-      </motion.div>
+      </div>
     </div>
   );
 }

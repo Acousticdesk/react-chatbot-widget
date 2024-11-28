@@ -12,6 +12,7 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
+// todo akicha: motion was removed because tree shaking wasn't working, see if it's common for all the libraries and bring back motion
 // todo akicha: should be cross-browser compatible
 // todo akicha: check the bundle size
 // todo akicha: configure typography

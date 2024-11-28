@@ -38,6 +38,15 @@ export default {
         "user-message-text": `var(--chatbot-widget-message-text-color, ${colors["user-message-text"]})`,
         "bot-message-bubble": `var(--chatbot-widget-bot-message-bubble-color, ${colors["bot-message-bubble"]})`,
       },
+      keyframes: {
+        "slide-in": {
+          "0%": { opacity: 0, transform: "translateX(-100px)" },
+          "100%": { opacity: 1, transform: "rotate(0)" },
+        },
+      },
+      animation: {
+        "slide-in": "slide-in 0.15s ease-out",
+      },
     },
   },
   plugins: [],
