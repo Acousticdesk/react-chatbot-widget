@@ -16,6 +16,9 @@ export const colors = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  // we don't want to collide with the user defined tailwind classnames so we are adding the prefix
+  prefix: "cw-",
+  // this will help us prefix the .hover, .active, .focus, etc. tailwind generated CSS rules
   important: ".react-chatbot-widget",
   content: ["./src/**/*.{ts,tsx,html}", "./.storybook/**/*.{ts,tsx,html}"],
   theme: {

@@ -7,7 +7,7 @@ const meta: Meta<typeof ReactChatbotWidget> = {
   title: "ReactChatbotWidget",
   tags: ["autodocs"],
   args: {
-    className: "relative translate-x-0 translate-y-0 inset-0 mx-auto",
+    className: "cw-relative cw-translate-x-0 cw-translate-y-0 !cw-inset-0 cw-mx-auto",
   },
   parameters: {
     backgrounds: {
@@ -25,10 +25,10 @@ const meta: Meta<typeof ReactChatbotWidget> = {
 
       return (
         <div>
-          <label className="text-white flex items-center mb-4">
+          <label className="cw-text-white cw-flex cw-items-center cw-mb-4">
             <input type="checkbox" onChange={handleDarkModeChange} />
-            <span className="ml-2 text-white flex items-center">
-              <IoMoonOutline className="mr-2" />
+            <span className="cw-ml-2 cw-text-white cw-flex cw-items-center">
+              <IoMoonOutline className="cw-mr-2" />
               Dark Theme
             </span>
           </label>

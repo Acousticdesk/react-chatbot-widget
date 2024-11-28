@@ -23,7 +23,7 @@ const preview: Preview = {
     (Story) => {
       return (
         <div className="react-chatbot-widget">
-          <div className="font-sans">
+          <div className="cw-font-sans">
             <Story />
           </div>
         </div>

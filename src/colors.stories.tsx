@@ -34,11 +34,11 @@ interface ColorsProps {
 
 function Colors({ colors }: ColorsProps) {
   return (
-    <ul className="grid grid-cols-3 gap-4">
+    <ul className="cw-grid cw-grid-cols-3 cw-gap-4">
       {Object.entries(colors).map(([key, value]) => (
-        <li key={key} className="shadow rounded overflow-hidden bg-white">
-          <div className="h-20" style={{ backgroundColor: value }} />
-          <p className="px-4 py-2">{key}</p>
+        <li key={key} className="cw-shadow cw-rounded cw-overflow-hidden cw-bg-white">
+          <div className="cw-h-20" style={{ backgroundColor: value }} />
+          <p className="cw-px-4 cw-py-2">{key}</p>
         </li>
       ))}
     </ul>
