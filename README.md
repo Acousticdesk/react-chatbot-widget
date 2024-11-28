@@ -16,9 +16,8 @@ npm i @acousticdesk/react-chatbot-widget
 
 ### Bundle Size
 
-_Rendered_: 475KB  
-_Gzip_: 145KB  
-_Brotli_: 122KB
+_Gzip_: 15KB  
+_Brotli_: 13KB
 
 ## Running Locally
 
