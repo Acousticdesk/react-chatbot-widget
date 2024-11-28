@@ -19,7 +19,8 @@
     "publish:fg": "npm publish --foreground-scripts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "version-alpha": "npm version prerelease --preid=alpha"
+    "version-alpha": "npm version prerelease --preid=alpha",
+    "analyze-bundle": "npx vite-bundle-visualizer"
   },
   "dependencies": {
     "motion": "11.11.17",
