@@ -14,22 +14,16 @@ interface ReactChatbotWidgetProps {
 
 // todo akicha: motion was removed because tree shaking wasn't working, see if it's common for all the libraries and bring back motion
 // todo akicha: should be cross-browser compatible
-// todo akicha: check the bundle size
-// todo akicha: configure typography
-// todo akicha: react and react-dom (maybe more libraries) should be marked as peer dependencies
-// todo akicha: export types from the npm package
-// todo akicha: we need to re-deploy to gh-pages every time we release a new version
+// todo akicha: re-deploy to gh-pages every time we release a new version
 
-// todo akicha: the styles should be configured to use prefix
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
-// todo akicha: allow users to customize fonts
+// todo akicha: allow users to customize fonts easily
 // todo akicha: add the typing indicator
 // todo akicha: user and AI messages
 // todo akicha: customizable rich text support
 // todo akicha: error message
 // todo akicha: loading states and allow to turn them on whenever needed
 // todo akicha: chatHistory should support infinite loading
-// todo akicha: bundle size should be reasonable
 export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
   const [hasDrawer, setHasDrawer] = useState(false);
 
