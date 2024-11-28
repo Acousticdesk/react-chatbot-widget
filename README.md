@@ -1,4 +1,4 @@
-# @acousticdek/react-chatbot-widget
+# @acousticdesk/react-chatbot-widget
 
 A lightweight (_15KB gzipped_), fully customizable React chatbot widget designed to seamlessly enhance your web application.
 
