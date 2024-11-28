@@ -12,6 +12,7 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
+// todo akicha: use lucide-icons
 // todo akicha: motion was removed because tree shaking wasn't working, see if it's common for all the libraries and bring back motion
 // todo akicha: should be cross-browser compatible
 // todo akicha: re-deploy to gh-pages every time we release a new version
