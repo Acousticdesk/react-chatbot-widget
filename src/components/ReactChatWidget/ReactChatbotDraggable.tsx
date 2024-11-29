@@ -44,53 +44,29 @@ export function ReactChatbotDraggable({
         return;
       }
 
-      if (
-        position.x < 0 ||
-        position.x > window.innerWidth - contentElement.clientWidth ||
-        position.y < 0 ||
-        position.y > window.innerHeight - contentElement.clientHeight
-      ) {
-        // reset the position to the last valid position on the screen
-        return;
-      }
+      position.x = Math.max(
+        0,
+        Math.min(
+          event.clientX - containerElement.clientWidth / 2,
+          window.innerWidth - contentElement.clientWidth
+        )
+      );
 
-      position.x = event.clientX - containerElement.clientWidth / 2;
       // todo akicha: we should allow dragging only when drag handle (header) is targeted
-      position.y = event.clientY - 20;
+      position.y = Math.max(
+        0,
+        Math.min(
+          event.clientY - 20,
+          window.innerHeight - contentElement.clientHeight
+        )
+      );
 
       setPosition({ ...position });
-    };
-
-    // todo akicha: animate the movement
-    const ensureBoundaries = () => {
-      if (position.x < 0) {
-        position.x = 0;
-        setPosition({ ...position });
-      }
-
-      if (position.x > window.innerWidth - contentElement.clientWidth) {
-        position.x = window.innerWidth - contentElement.clientWidth;
-        setPosition({ ...position });
-      }
-
-      if (position.y < 0) {
-        position.y = 0;
-        setPosition({ ...position });
-      }
-
-      if (position.y > window.innerHeight - contentElement.clientHeight) {
-        position.y = window.innerHeight - contentElement.clientHeight;
-        setPosition({ ...position });
-      }
-
-      window.requestAnimationFrame(ensureBoundaries);
     };
 
     containerElement.addEventListener("mousedown", handleMouseDown);
     containerElement.addEventListener("mouseup", handleMouseUp);
     containerElement.addEventListener("mousemove", handleMouseMove);
-    // todo akicha: clean it up
-    window.requestAnimationFrame(ensureBoundaries);
 
     return () => {
       containerElement.removeEventListener("mousedown", handleMouseDown);
