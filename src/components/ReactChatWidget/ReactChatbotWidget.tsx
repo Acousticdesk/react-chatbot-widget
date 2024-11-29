@@ -3,7 +3,7 @@ import { FaRobot } from "react-icons/fa";
 
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import "../../index.css";
@@ -28,22 +28,25 @@ interface ReactChatbotWidgetProps {
 // todo akicha: chatHistory should support infinite loading
 export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
   const [hasDrawer, setHasDrawer] = useState(false);
+  const dragHandleRef = useRef<HTMLDivElement>(null);
 
   function toggleDrawer() {
     setHasDrawer((isOpen) => !isOpen);
   }
 
   return (
-    <ReactChatbotDraggable>
+    <ReactChatbotDraggable handleRef={dragHandleRef}>
       <div className="react-chatbot-widget">
-        {/* todo akicha: absolute -> relative after the move-able popover is added */}
         <div
           className={twMerge(
-            "cw-absolute cw-inset-1/2 -cw-translate-x-1/2 -cw-translate-y-1/2 cw-flex cw-flex-col cw-w-[480px] cw-h-[640px] cw-font-sans",
+            "cw-flex cw-flex-col cw-w-[480px] cw-h-[640px] cw-font-sans",
             className
           )}
         >
-          <header className="cw-rounded-t-lg cw-px-4 cw-py-2 cw-flex cw-justify-between cw-border-b cw-bg-background cw-border-border">
+          <header
+            ref={dragHandleRef}
+            className="cw-rounded-t-lg cw-px-4 cw-py-2 cw-flex cw-justify-between cw-border-b cw-bg-background cw-border-border cw-cursor-move"
+          >
             {/* todo akicha: this icon is very wide */}
             {/* todo akicha: make it a clickable button */}
             {/* todo akicha: we need an icon component to remember the color and the size */}

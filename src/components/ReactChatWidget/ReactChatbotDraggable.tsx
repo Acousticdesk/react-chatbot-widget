@@ -1,13 +1,15 @@
 // todo akicha: this component should be exported and let the user know if widget should be draggable
 import { createPortal } from "react-dom";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { RefObject, useEffect, useRef, useState, type ReactNode } from "react";
 
 interface ReactChatbotDraggableProps {
   children: ReactNode;
+  handleRef: RefObject<HTMLDivElement>;
 }
 
 // todo akicha: mention in the documentation that the widget is not mobile friendly
 export function ReactChatbotDraggable({
+  handleRef,
   children,
 }: ReactChatbotDraggableProps) {
   const [{ x, y }, setPosition] = useState({ x: 0, y: 0 });
@@ -17,8 +19,9 @@ export function ReactChatbotDraggable({
   useEffect(() => {
     const containerElement = containerRef.current;
     const contentElement = contentRef.current;
+    const handleElement = handleRef.current;
 
-    if (!containerElement || !contentElement) {
+    if (!containerElement || !contentElement || !handleElement) {
       return;
     }
 
@@ -52,11 +55,10 @@ export function ReactChatbotDraggable({
         )
       );
 
-      // todo akicha: we should allow dragging only when drag handle (header) is targeted
       position.y = Math.max(
         0,
         Math.min(
-          event.clientY - 20,
+          event.clientY - handleElement.clientHeight / 2,
           window.innerHeight - contentElement.clientHeight
         )
       );
@@ -64,16 +66,16 @@ export function ReactChatbotDraggable({
       setPosition({ ...position });
     };
 
-    containerElement.addEventListener("mousedown", handleMouseDown);
-    containerElement.addEventListener("mouseup", handleMouseUp);
-    containerElement.addEventListener("mousemove", handleMouseMove);
+    handleElement.addEventListener("mousedown", handleMouseDown);
+    document.body.addEventListener("mouseup", handleMouseUp);
+    document.body.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      containerElement.removeEventListener("mousedown", handleMouseDown);
-      containerElement.removeEventListener("mouseup", handleMouseUp);
-      containerElement?.removeEventListener("mousemove", handleMouseMove);
+      handleElement.removeEventListener("mousedown", handleMouseDown);
+      document.body.removeEventListener("mouseup", handleMouseUp);
+      document.body?.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [containerRef, contentRef]);
+  }, [containerRef, contentRef, handleRef]);
 
   return createPortal(
     <div style={{ position: "fixed", left: x, top: y }} ref={containerRef}>
