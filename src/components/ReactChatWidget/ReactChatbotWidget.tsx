@@ -5,8 +5,9 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-import "../../index.css";
 import { ReactChatbotDraggable } from "./ReactChatbotDraggable";
+
+import "../../index.css";
 
 interface ReactChatbotWidgetProps {
   className?: string;
