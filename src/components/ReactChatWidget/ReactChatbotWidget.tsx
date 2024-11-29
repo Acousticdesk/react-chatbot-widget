@@ -35,6 +35,7 @@ export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
   }
 
   return (
+    // todo akicha: we should allow the user to wrap the widget in the draggable component themselves
     <ReactChatbotDraggable handleRef={dragHandleRef}>
       <div className="react-chatbot-widget">
         <div
