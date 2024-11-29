@@ -1,6 +1,5 @@
-import { IoIosMenu } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
-import { FaRobot } from "react-icons/fa";
+import { BotIcon, MenuIcon } from "lucide-react";
 
 interface ReactChatWidgetDrawerProps {
   toggleDrawer: () => void;
@@ -22,7 +21,7 @@ export function ReactChatWidgetDrawer({
     >
       <div className="cw-animate-slide-in cw-h-full cw-bg-background cw-border-r-border cw-border-r cw-w-full cw-px-4 cw-py-2">
         <header>
-          <IoIosMenu
+          <MenuIcon
             // todo akicha: move this function definition to the top
             onClick={toggleDrawer}
             // todo akicha: repetitive className with what we have in the container component
@@ -34,7 +33,7 @@ export function ReactChatWidgetDrawer({
           onClick={toggleDrawer}
           className="cw-my-8 cw-flex cw-w-full cw-items-center hover:cw-bg-primary-hover active:cw-bg-primary-active cw-px-4 cw-py-2 cw-rounded"
         >
-          <FaRobot className="cw-text-text-secondary cw-text-2xl" />
+          <BotIcon className="cw-text-text-secondary cw-text-2xl" />
           <p className="cw-font-semibold cw-text-text-primary cw-ml-2">
             acousticdesk/chatbot-widget
           </p>

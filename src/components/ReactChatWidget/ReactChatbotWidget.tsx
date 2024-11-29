@@ -1,5 +1,4 @@
-import { IoIosClose, IoIosMenu, IoMdSend } from "react-icons/io";
-import { FaRobot } from "react-icons/fa";
+import { BotIcon, XIcon, MenuIcon, SendHorizonalIcon } from "lucide-react";
 
 import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
@@ -13,7 +12,8 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
-// todo akicha: use lucide-icons
+// todo akicha: document the project uses lucide-react icons
+// todo akicha: when missing the menu button click, the widget immediately changes position which disrupts the user flow
 // todo akicha: motion was removed because tree shaking wasn't working, see if it's common for all the libraries and bring back motion
 // todo akicha: should be cross-browser compatible
 // todo akicha: re-deploy to gh-pages every time we release a new version
@@ -51,16 +51,19 @@ export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
             {/* todo akicha: this icon is very wide */}
             {/* todo akicha: make it a clickable button */}
             {/* todo akicha: we need an icon component to remember the color and the size */}
-            <IoIosMenu
+            <MenuIcon
               // todo akicha: move this function definition to the top
               onClick={toggleDrawer}
               className="cw-text-text-secondary cw-cursor-pointer cw-text-3xl"
             />
-            <IoIosClose className="cw-text-text-secondary cw-cursor-pointer cw-text-3xl" />
+            <XIcon className="cw-text-text-secondary cw-cursor-pointer cw-text-3xl" />
           </header>
           <div className="cw-flex-1 cw-bg-background cw-flex cw-flex-col cw-items-center cw-justify-center">
             <div>
-              <FaRobot className="cw-text-text-secondary cw-text-5xl cw-mx-auto" />
+              <BotIcon
+                size={48}
+                className="cw-text-text-secondary cw-mx-auto"
+              />
               {/* todo akicha: we should allow to customize the color of the text */}
               <p className="cw-font-semibold cw-text-text-primary cw-mt-1">
                 acousticdesk/chatbot-widget
@@ -78,7 +81,7 @@ export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
               textAreaProps={{ placeholder: "Ask me anything..." }}
             />
             {/* todo akicha: this should be disabled by default */}
-            <IoMdSend className="cw-text-primary cw-cursor-pointer cw-ml-2 cw-mt-1 cw-text-3xl" />
+            <SendHorizonalIcon className="cw-text-primary cw-cursor-pointer cw-ml-2 cw-mt-1 cw-text-3xl" />
           </footer>
           {hasDrawer ? (
             <ReactChatWidgetDrawer

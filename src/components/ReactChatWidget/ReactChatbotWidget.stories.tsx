@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import { IoMoonOutline } from "react-icons/io5";
+import { MoonIcon } from "lucide-react";
 import { ReactChatbotWidget } from "./ReactChatbotWidget";
 
 const meta: Meta<typeof ReactChatbotWidget> = {
@@ -28,7 +28,7 @@ const meta: Meta<typeof ReactChatbotWidget> = {
           <label className="cw-text-white cw-flex cw-items-center cw-mb-4">
             <input type="checkbox" onChange={handleDarkModeChange} />
             <span className="cw-ml-2 cw-text-white cw-flex cw-items-center">
-              <IoMoonOutline className="cw-mr-2" />
+              <MoonIcon className="cw-mr-2" />
               Dark Theme
             </span>
           </label>
