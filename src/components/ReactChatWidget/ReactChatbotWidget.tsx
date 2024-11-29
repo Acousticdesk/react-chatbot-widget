@@ -13,20 +13,19 @@ interface ReactChatbotWidgetProps {
   className?: string;
 }
 
-// todo akicha: document the project uses lucide-react icons
-// todo akicha: when missing the menu button click, the widget immediately changes position which disrupts the user flow
-// todo akicha: motion was removed because tree shaking wasn't working, see if it's common for all the libraries and bring back motion
-// todo akicha: should be cross-browser compatible
 // todo akicha: re-deploy to gh-pages every time we release a new version
-
-// todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
+// todo akicha: when missing the menu button click, the widget immediately changes position which disrupts the user flow
 // todo akicha: allow users to customize fonts easily
+
+// todo akicha: document the project uses lucide-react icons
+// todo akicha: should be cross-browser compatible
+// todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
 // todo akicha: add the typing indicator
 // todo akicha: user and AI messages
 // todo akicha: customizable rich text support
 // todo akicha: error message
-// todo akicha: loading states and allow to turn them on whenever needed
-// todo akicha: chatHistory should support infinite loading
+// todo akicha: loading states for when chats are loading
+// todo akicha: the widget should support infinite loading
 export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
   const [hasDrawer, setHasDrawer] = useState(false);
   const dragHandleRef = useRef<HTMLDivElement>(null);
@@ -49,11 +48,9 @@ export function ReactChatbotWidget({ className }: ReactChatbotWidgetProps) {
             ref={dragHandleRef}
             className="cw-rounded-t-lg cw-px-4 cw-py-2 cw-flex cw-justify-between cw-border-b cw-bg-background cw-border-border cw-cursor-move"
           >
-            {/* todo akicha: this icon is very wide */}
             {/* todo akicha: make it a clickable button */}
             {/* todo akicha: we need an icon component to remember the color and the size */}
             <MenuIcon
-              // todo akicha: move this function definition to the top
               onClick={toggleDrawer}
               className="cw-text-text-secondary cw-cursor-pointer cw-text-3xl"
             />
