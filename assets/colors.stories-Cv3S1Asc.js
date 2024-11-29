@@ -1,0 +1,7 @@
+import{j as s}from"./jsx-runtime-CkxqCPlQ.js";import"./index-DJO9vBfz.js";function w(){const c="--chatbot-widget-",o={light:{},dark:{}};for(const a of document.styleSheets)try{for(const e of a.cssRules||[])if(e instanceof CSSStyleRule){for(const l of e.style)if(l.startsWith(c)){const g=e.style.getPropertyValue(l).trim(),f=e.selectorText===":root"?"light":"dark";o[f][l]=g}}}catch(e){console.error("Could not access stylesheet:",e)}return o}function x({colors:c}){return s.jsx("ul",{className:"cw-grid cw-grid-cols-3 cw-gap-4",children:Object.entries(c).map(([o,a])=>s.jsxs("li",{className:"cw-shadow cw-rounded cw-overflow-hidden cw-bg-white",children:[s.jsx("div",{className:"cw-h-20",style:{backgroundColor:a}}),s.jsx("p",{className:"cw-px-4 cw-py-2",children:o})]},o))})}const h=w(),j={component:x,title:"ReactChatWidget Color Scheme",tags:["autodocs"],args:{colors:h.light}},r={args:{}},t={args:{colors:h.dark}};var n,i,d;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  args: {}
+}`,...(d=(i=r.parameters)==null?void 0:i.docs)==null?void 0:d.source}}};var m,u,p;t.parameters={...t.parameters,docs:{...(m=t.parameters)==null?void 0:m.docs,source:{originalSource:`{
+  args: {
+    colors: colors.dark
+  }
+}`,...(p=(u=t.parameters)==null?void 0:u.docs)==null?void 0:p.source}}};const S=["Default","DarkTheme"];export{t as DarkTheme,r as Default,S as __namedExportsOrder,j as default};
