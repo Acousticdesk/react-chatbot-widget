@@ -1,15 +1,15 @@
 // todo akicha: this component should be exported and let the user know if widget should be draggable
 import { createPortal } from "react-dom";
-import { RefObject, useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 interface ReactChatbotDraggableProps {
   children: ReactNode;
-  handleRef: RefObject<HTMLDivElement>;
+  handleElement?: HTMLElement | null;
 }
 
 // todo akicha: mention in the documentation that the widget is not mobile friendly
 export function ReactChatbotDraggable({
-  handleRef,
+  handleElement,
   children,
 }: ReactChatbotDraggableProps) {
   const [{ x, y }, setPosition] = useState({ x: 0, y: 0 });
@@ -19,7 +19,6 @@ export function ReactChatbotDraggable({
   useEffect(() => {
     const containerElement = containerRef.current;
     const contentElement = contentRef.current;
-    const handleElement = handleRef.current;
 
     if (!containerElement || !contentElement || !handleElement) {
       return;
@@ -75,7 +74,7 @@ export function ReactChatbotDraggable({
       document.body.removeEventListener("mouseup", handleMouseUp);
       document.body?.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [containerRef, contentRef, handleRef]);
+  }, [containerRef, contentRef, handleElement]);
 
   return createPortal(
     <div style={{ position: "fixed", left: x, top: y }} ref={containerRef}>

@@ -1,0 +1,6 @@
+/* we render the chatbot widget that with position: fixed */
+/* we want to ensure the html, body are full screen to allow the draggable handlers attached to the html and body element work properly */
+html,
+body {
+  min-height: 100vh;
+}

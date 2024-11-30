@@ -1,7 +1,8 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
 
 import "../src/index.css";
-import React from "react";
+import "./preview.css";
 
 const preview: Preview = {
   parameters: {
@@ -12,7 +13,7 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      default: "light",
+      default: "dark",
       values: [
         { name: "light", value: "#ffffff" },
         { name: "dark", value: "#333333" },
