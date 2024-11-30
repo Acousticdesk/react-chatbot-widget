@@ -9,6 +9,7 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
+// todo akicha: fix the menu opening on the whole screen
 // todo akicha: when missing the menu button click, the widget immediately changes position which disrupts the user flow
 // todo akicha: allow users to customize fonts easily
 
