@@ -9,7 +9,6 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
-// todo akicha: fix the menu opening on the whole screen
 // todo akicha: when missing the menu button click, the widget immediately changes position which disrupts the user flow
 // todo akicha: allow users to customize fonts easily
 
@@ -38,7 +37,7 @@ export function ReactChatbotWidget({
     <div className="react-chatbot-widget">
       <div
         className={twMerge(
-          "cw-flex cw-flex-col cw-w-[480px] cw-h-[640px] cw-font-sans",
+          "cw-relative cw-flex cw-flex-col cw-w-[480px] cw-h-[640px] cw-font-sans",
           className
         )}
       >
