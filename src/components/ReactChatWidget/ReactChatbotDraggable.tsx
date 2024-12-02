@@ -78,6 +78,7 @@ export function ReactChatbotDraggable({
     };
   }, [containerRef, contentRef, handleElement]);
 
+  // todo akicha: see if we can use transform/translate instead for better performance
   return createPortal(
     <div style={{ position: "fixed", left: x, top: y }} ref={containerRef}>
       <div style={{ display: "inline-block" }} ref={contentRef}>
