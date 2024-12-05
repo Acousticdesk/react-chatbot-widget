@@ -27,10 +27,13 @@ export function ReactChatbotDraggable({
     let canDrag = false;
 
     const position: { x: number; y: number } = {
-      x: window.innerWidth / 2 - contentElement.clientWidth / 2,
+      x: document.body.clientWidth / 2 - contentElement.clientWidth / 2,
       y: window.innerHeight / 2 - contentElement.clientHeight / 2,
     };
 
+    // we can't use containerElement.getBoundingClientRect() after we set the position of the container
+    // containerElement.getBoundingClientRect() returned by the browser will be before the position is set
+    // there is no way to know the new position in the hook since it won't be updated as we don't have the position in the dependency array
     setPosition({ ...position });
 
     const handleMouseDown = () => {
@@ -46,21 +49,46 @@ export function ReactChatbotDraggable({
         return;
       }
 
-      position.x = Math.max(
-        0,
-        Math.min(
-          event.clientX - containerElement.clientWidth / 2,
-          window.innerWidth - contentElement.clientWidth
-        )
+      // todo akicha: test with different paddings set on body and html
+      // todo akicha: instead of doing all the calculatons, use window.innerWidth and window.innerHeight
+      const bodyStyle = window.getComputedStyle(document.body);
+      const htmlStyle = window.getComputedStyle(document.documentElement);
+
+      const extraPaddingLeft =
+        window.parseFloat(bodyStyle.paddingLeft) +
+        window.parseFloat(htmlStyle.paddingLeft);
+
+      const extraPaddingRight =
+        window.parseFloat(bodyStyle.paddingRight) +
+        window.parseFloat(htmlStyle.paddingRight);
+
+      const extraPaddingTop =
+        window.parseFloat(bodyStyle.paddingTop) +
+        window.parseFloat(htmlStyle.paddingTop);
+
+      const extraPaddingBottom =
+        window.parseFloat(bodyStyle.paddingBottom) +
+        window.parseFloat(htmlStyle.paddingBottom);
+
+      position.x += event.movementX;
+
+      position.x = Math.min(
+        document.body.clientWidth -
+          contentElement.clientWidth -
+          extraPaddingRight,
+        position.x
       );
 
-      position.y = Math.max(
-        0,
-        Math.min(
-          event.clientY - handleElement.clientHeight / 2,
-          window.innerHeight - contentElement.clientHeight
-        )
+      position.x = Math.max(0 - extraPaddingLeft, position.x);
+
+      position.y += event.movementY;
+
+      position.y = Math.min(
+        window.innerHeight - contentElement.clientHeight - extraPaddingBottom,
+        position.y
       );
+
+      position.y = Math.max(0 - extraPaddingTop, position.y);
 
       setPosition({ ...position });
     };
@@ -78,9 +106,11 @@ export function ReactChatbotDraggable({
     };
   }, [containerRef, contentRef, handleElement]);
 
-  // todo akicha: see if we can use transform/translate instead for better performance
   return createPortal(
-    <div style={{ position: "fixed", left: x, top: y }} ref={containerRef}>
+    <div
+      style={{ position: "fixed", transform: `translate(${x}px, ${y}px)` }}
+      ref={containerRef}
+    >
       <div style={{ display: "inline-block" }} ref={contentRef}>
         {children}
       </div>
