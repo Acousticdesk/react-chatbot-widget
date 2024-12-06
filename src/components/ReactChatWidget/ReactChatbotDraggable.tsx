@@ -106,7 +106,12 @@ export function ReactChatbotDraggable({
 
   return createPortal(
     <div
-      style={{ position: "fixed", transform: `translate(${x}px, ${y}px)` }}
+      style={{
+        position: "fixed",
+        transform: `translate(${x}px, ${y}px)`,
+        left: 0,
+        top: 0,
+      }}
       ref={containerRef}
     >
       <div style={{ display: "inline-block" }} ref={contentRef}>
