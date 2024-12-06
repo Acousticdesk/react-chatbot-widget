@@ -1,7 +1,7 @@
 {
   "name": "@acousticdesk/react-chatbot-widget",
   "description": "A fully customizable React chatbot widget for your web application",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "dist/react-chatbot-widget.cjs.js",
   "module": "dist/react-chatbot-widget.es.js",
