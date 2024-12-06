@@ -94,15 +94,13 @@ export function ReactChatbotDraggable({
     };
 
     handleElement.addEventListener("mousedown", handleMouseDown);
-    document.body.addEventListener("mouseup", handleMouseUp);
-    document.body.addEventListener("mousemove", handleMouseMove);
-    document.body.addEventListener("mouseleave", handleMouseUp);
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       handleElement.removeEventListener("mousedown", handleMouseDown);
-      document.body.removeEventListener("mouseup", handleMouseUp);
-      document.body?.removeEventListener("mousemove", handleMouseMove);
-      document.body.removeEventListener("mouseleave", handleMouseUp);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [containerRef, contentRef, handleElement]);
 

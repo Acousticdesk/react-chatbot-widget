@@ -9,7 +9,6 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
-// todo akicha: see if we can continue dragging when the inner html/body lost cursor focus
 // todo akicha: allow users to customize fonts easily
 
 // todo akicha: document the project uses lucide-react icons
