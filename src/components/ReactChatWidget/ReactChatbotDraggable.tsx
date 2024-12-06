@@ -15,6 +15,9 @@ export function ReactChatbotDraggable({
   const [{ x, y }, setPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  // use this state to show the component only when the position was applied to prevent
+  // the position changing abruptly when user opens the widget on button click
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const containerElement = containerRef.current;
@@ -27,7 +30,7 @@ export function ReactChatbotDraggable({
     let canDrag = false;
 
     const position: { x: number; y: number } = {
-      x: document.body.clientWidth / 2 - contentElement.clientWidth / 2,
+      x: window.innerWidth / 2 - contentElement.clientWidth / 2,
       y: window.innerHeight / 2 - contentElement.clientHeight / 2,
     };
 
@@ -49,49 +52,29 @@ export function ReactChatbotDraggable({
         return;
       }
 
-      // todo akicha: test with different paddings set on body and html
-      // todo akicha: instead of doing all the calculatons, use window.innerWidth and window.innerHeight
-      const bodyStyle = window.getComputedStyle(document.body);
-      const htmlStyle = window.getComputedStyle(document.documentElement);
-
-      const extraPaddingLeft =
-        window.parseFloat(bodyStyle.paddingLeft) +
-        window.parseFloat(htmlStyle.paddingLeft);
-
-      const extraPaddingRight =
-        window.parseFloat(bodyStyle.paddingRight) +
-        window.parseFloat(htmlStyle.paddingRight);
-
-      const extraPaddingTop =
-        window.parseFloat(bodyStyle.paddingTop) +
-        window.parseFloat(htmlStyle.paddingTop);
-
-      const extraPaddingBottom =
-        window.parseFloat(bodyStyle.paddingBottom) +
-        window.parseFloat(htmlStyle.paddingBottom);
-
       position.x += event.movementX;
 
       position.x = Math.min(
-        document.body.clientWidth -
-          contentElement.clientWidth -
-          extraPaddingRight,
+        window.innerWidth -
+          contentElement.clientWidth,
         position.x
       );
 
-      position.x = Math.max(0 - extraPaddingLeft, position.x);
+      position.x = Math.max(0, position.x);
 
       position.y += event.movementY;
 
       position.y = Math.min(
-        window.innerHeight - contentElement.clientHeight - extraPaddingBottom,
+        window.innerHeight - contentElement.clientHeight,
         position.y
       );
 
-      position.y = Math.max(0 - extraPaddingTop, position.y);
+      position.y = Math.max(0, position.y);
 
       setPosition({ ...position });
     };
+
+    setIsVisible(true);
 
     handleElement.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
@@ -111,6 +94,7 @@ export function ReactChatbotDraggable({
         transform: `translate(${x}px, ${y}px)`,
         left: 0,
         top: 0,
+        opacity: isVisible ? 1 : 0,
       }}
       ref={containerRef}
     >
