@@ -4,6 +4,8 @@ import { SetStateAction } from 'react';
 
 export declare function ReactChatbotWidget({ className, setHeaderElement, }: ReactChatbotWidgetProps): JSX_2.Element;
 
+export declare function ReactChatbotWidgetDraggable(props: ReactChatbotWidgetProps): JSX_2.Element;
+
 declare interface ReactChatbotWidgetProps {
     className?: string;
     setHeaderElement?: Dispatch<SetStateAction<HTMLElement | null | undefined>>;

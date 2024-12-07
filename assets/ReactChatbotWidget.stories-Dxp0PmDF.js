@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-CkxqCPlQ.js";import{c as p,R as u}from"./ReactChatbotWidget-Dmqra6Gs.js";import"./index-DJO9vBfz.js";/* empty css              *//**
+import{j as e}from"./jsx-runtime-CkxqCPlQ.js";import{c as p,R as u}from"./ReactChatbotWidget-CnIO2WD7.js";import"./index-DJO9vBfz.js";/* empty css              *//**
  * @license lucide-react v0.462.0 - ISC
  *
  * This source code is licensed under the ISC license.
