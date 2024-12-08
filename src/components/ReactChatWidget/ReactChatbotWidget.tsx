@@ -9,6 +9,8 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
+// todo akicha: move to the center when the windows is resized
+// todo akicha: change the Demo link in the Readme file
 // todo akicha: when toggle button is clicked, the chatbot position changes abruptly and looks like if flickers
 // todo akicha: open it when button on the UI is clicked
 // todo akicha: allow users to customize fonts easily
