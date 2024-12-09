@@ -6,7 +6,7 @@ A lightweight (_15KB gzipped_), fully customizable React chatbot widget designed
 
 ## Demo
 
-https://acousticdesk.github.io/react-chatbot-widget/?path=/docs/reactchatwidget--docs
+https://acousticdesk.github.io/react-chatbot-widget/?path=/story/reactchatbotwidgetdraggable--default
 
 ## Getting Started
 
