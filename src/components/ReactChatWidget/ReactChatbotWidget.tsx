@@ -9,6 +9,7 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
+// todo akicha: export primitives to allow users compose components together and style them as they see fit
 // todo akicha: allow users to customize fonts easily
 
 // todo akicha: document the project uses lucide-react icons
