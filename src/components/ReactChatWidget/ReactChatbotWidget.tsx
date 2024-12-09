@@ -10,9 +10,12 @@ import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
 // todo akicha: export primitives to allow users compose components together and style them as they see fit
+// todo akicha: expose classNames for each inner component so users can style them
+// todo akicha: create slots for every inner component so users can replace them with custom components
 // todo akicha: allow users to customize fonts easily
 
 // todo akicha: document the project uses lucide-react icons
+// todo akicha: confirm lucide-react bundle is tree shakable
 // todo akicha: should be cross-browser compatible
 // todo akicha: reference: https://sendbird.github.io/chat-ai-widget/
 // todo akicha: add the typing indicator
