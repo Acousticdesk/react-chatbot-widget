@@ -9,8 +9,6 @@ import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 import "../../index.css";
 import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
-// todo akicha: when toggle button is clicked, the chatbot position changes abruptly and looks like if flickers
-// todo akicha: open it when button on the UI is clicked
 // todo akicha: allow users to customize fonts easily
 
 // todo akicha: document the project uses lucide-react icons
