@@ -30,8 +30,8 @@ export function ReactChatbotDraggable({
     let canDrag = false;
 
     const position: { x: number; y: number } = {
-      x: window.innerWidth / 2 - contentElement.clientWidth / 2,
-      y: window.innerHeight / 2 - contentElement.clientHeight / 2,
+      x: Math.max(0, window.innerWidth / 2 - contentElement.clientWidth / 2),
+      y: Math.max(0, window.innerHeight / 2 - contentElement.clientHeight / 2),
     };
 
     // we can't use containerElement.getBoundingClientRect() after we set the position of the container
