@@ -7,8 +7,10 @@ import { TextAreaAutoResize } from "../ui/TextAreaAutoResize";
 import { ReactChatWidgetDrawer } from "./ReachChatbotWidgetDrawer";
 
 import "../../index.css";
-import { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
+import type { ReactChatbotWidgetProps } from "./ReactChatbotWidget.types";
 
+// todo akicha: see how to annotate stories and show presets of code
+// todo akicha: re-use the headless component here
 // todo akicha: export primitives to allow users compose components together and style them as they see fit
 // todo akicha: expose classNames for each inner component so users can style them
 // todo akicha: create slots for every inner component so users can replace them with custom components
